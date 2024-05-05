@@ -38,5 +38,5 @@
         dotnetCorePackages.dotnet_8.sdk
       ];
     };
-  }
+  };
 }
