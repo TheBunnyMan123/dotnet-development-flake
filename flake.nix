@@ -11,6 +11,7 @@
     let
       pkgs = import nixpkgs {
         system = "${system}";
+        config.allowUnfree = true;
       };
     in {
       devShell = pkgs.mkShell {
@@ -29,14 +30,14 @@
           exec codium --verbose .
         '';
       };
-    }
-
-     devShells = {
-      noIde = pkgs.mkShell {
-        packages = with pkgs; [
-          dotnetCorePackages.dotnet_8.sdk
-        ];
+      
+      devShells = {
+        noIde = pkgs.mkShell {
+          packages = with pkgs; [
+            dotnetCorePackages.dotnet_8.sdk
+          ];
+        };
       };
-    };
+    }
   );
 }
