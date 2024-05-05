@@ -30,13 +30,13 @@
         '';
       };
     }
-  );
 
-  devShells = {
-    noIde = pkgs.mkShell {
-      packages = with pkgs; [
-        dotnetCorePackages.dotnet_8.sdk
-      ];
+     devShells = {
+      noIde = pkgs.mkShell {
+        packages = with pkgs; [
+          dotnetCorePackages.dotnet_8.sdk
+        ];
+      };
     };
-  };
+  );
 }
