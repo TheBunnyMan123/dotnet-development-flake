@@ -20,8 +20,10 @@
           dotnetCorePackages.dotnet_8.sdk
           (vscode-with-extensions.override {
             vscode = vscodium;
-            vscodeExtensions = with vscode-extensions; [
-              ms-dotnettools.csdevkit
+            vscodeExtensions = with nix-vscode-extensions.extensions.${system}.vscode-marketplace; [
+              pkgs.vscode-extensions.ms-dotnettools.csdevkit
+              mhutchie.git-graph
+              aaron-bond.better-comments
             ];
           })
         ];
